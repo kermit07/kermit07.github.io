@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-8">
+    <a class="btn btn-success" [routerLink]="['new']">Dodaj projekt</a>
+  </div>
+  <div class="col-md-4">
+    <button type="button" class="btn btn-default" (click)="onRefreshList()">
+      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <app-house-item *ngFor="let house of houses; let i=index;" [house]="house" [houseIndex]="i"></app-house-item>
+    </ul>
+  </div>
+</div>

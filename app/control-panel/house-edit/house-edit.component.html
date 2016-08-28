@@ -1,0 +1,30 @@
+<hr>
+<div class="row">
+  <form [formGroup]="houseForm" (ngSubmit)="onSubmit()">
+    <div class="row col-xs-12">
+      <button type="submit" class="btn btn-success" [disabled]="!houseForm.valid">Zapisz</button>
+      <input type="button" class="btn btn-danger" (click)="onCancel()" value="Anuluj"/>
+    </div>
+    <br>
+    <br>
+    <div class="row col-xs-12 form-group">
+      <label for="name">Nazwa</label>
+      <input type="text" id="name" class="form-control" formControlName="name">
+    </div>
+    <div class="row col-xs-12 form-group">
+      <label for="owner">Właściciel</label>
+      <input type="text" id="owner" class="form-control" formControlName="owner">
+    </div>
+    <div class="row col-xs-12 form-group">
+      <label for="model-path">Model</label>
+      <input type="text" id="model-path" class="form-control" formControlName="modelPath">
+    </div>
+    <div class="row col-xs-12 form-group">
+      <label for="image-url">Zdjęcie</label>
+      <input type="text" id="image-url" class="form-control" formControlName="imagePath" #imagePath>
+    </div>
+  </form>
+  <div class="row col-xs-12 img">
+    <img [src]="imagePath.value" style="width: 100%;">
+  </div>
+</div>
